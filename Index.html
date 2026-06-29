@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Centros de Acopio para Apoyar a Venezuela</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap');
+
+  :root{
+    --navy:#0F2A57;
+    --red:#CE1126;
+    --yellow:#F7C600;
+    --cream:#FBF8F1;
+    --ink:#16213A;
+    --line:#D8DCE6;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .sheet{
+    width:1080px;
+    background:#fff;
+    border:3px solid var(--navy);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 50px rgba(15,42,87,0.15);
+  }
+
+  /* HEADER */
+  .header{
+    position:relative;
+    background:var(--navy);
+    padding:38px 56px 30px;
+    color:#fff;
+    overflow:hidden;
+  }
+  .header::after{
+    content:"";
+    position:absolute;
+    right:-60px; top:-60px;
+    width:260px; height:260px;
+    background:radial-gradient(circle, var(--yellow) 0%, transparent 70%);
+    opacity:0.18;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:3px;
+    font-weight:800;
+    color:var(--yellow);
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .title{
+    font-family:'Archivo Black',sans-serif;
+    font-size:54px;
+    line-height:1.02;
+    margin:0;
+    letter-spacing:-1px;
+  }
+  .title .accent{ color:var(--yellow); }
+  .title .accent2{ color:#FF6B5E; }
+  .subtitle-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:18px;
+  }
+  .flag-chip{
+    display:flex;
+    height:34px;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,.3);
+  }
+  .flag-chip span{ width:14px; height:34px;}
+  .flag-chip .b1{background:var(--yellow);}
+  .flag-chip .b2{background:var(--navy); border-left:3px solid var(--yellow); border-right:3px solid var(--yellow);}
+  .flag-chip .b3{background:var(--red);}
+  .country-pill{
+    background:#fff;
+    color:var(--navy);
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:2px;
+    padding:6px 22px;
+    border-radius:30px;
+    text-transform:uppercase;
+  }
+
+  /* GRID */
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background:var(--cream);
+  }
+  .city{
+    padding:26px 28px;
+    border-right:1px dashed var(--line);
+    border-bottom:1px dashed var(--line);
+  }
+  .grid > .city:nth-child(3n){ border-right:none; }
+
+  .city-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .pin{
+    width:26px; height:26px;
+    border-radius:50% 50% 50% 0;
+    background:var(--red);
+    transform:rotate(-45deg);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .pin::after{
+    content:"";
+    width:9px; height:9px;
+    background:#fff;
+    border-radius:50%;
+    transform:rotate(45deg);
+  }
+  .city-name{
+    font-family:'Archivo Black',sans-serif;
+    font-size:20px;
+    color:var(--navy);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+
+  .place{ margin-bottom:12px; }
+  .place:last-child{ margin-bottom:0; }
+  .place-name{ font-weight:700; font-size:14.5px; color:var(--ink); }
+  .place-addr{ font-size:13.5px; color:#3c455c; line-height:1.45; margin-top:1px; }
+  .meta{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    color:var(--red);
+    font-weight:600;
+    margin-top:4px;
+  }
+  .meta svg{ flex:none; }
+
+  .sub-place{
+    margin-left:14px;
+    margin-top:6px;
+    padding-left:10px;
+    border-left:2px solid var(--yellow);
+  }
+
+  /* FOOTER */
+  .footer{
+    background:var(--navy);
+    padding:22px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+  }
+  .footer-text{
+    font-family:'Archivo Black',sans-serif;
+    color:#fff;
+    font-size:24px;
+    letter-spacing:0.5px;
+  }
+  .footer-text .hl{ color:var(--yellow); }
+  .heart{ color:var(--red); font-size:26px; }
+
+  @media (max-width:900px){
+    .sheet{width:100%;}
+    .grid{grid-template-columns:1fr;}
+    .city{border-right:none;}
+    .title{font-size:38px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="header">
+    <div class="eyebrow">Solidaridad sin fronteras</div>
+    <h1 class="title">CENTROS DE <span class="accent">ACOPIO</span><br>PARA APOYAR A <span class="accent2">VENEZUELA</span></h1>
+    <div class="subtitle-row">
+      <div class="flag-chip"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+      <div class="country-pill">Colombia</div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Cúcuta</div></div>
+      <div class="place">
+        <div class="place-name">Calidex Courier</div>
+        <div class="place-addr">Zona Industrial: Avenida 6 #7N-109</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Barranquilla</div></div>
+      <div class="place">
+        <div class="place-name">Rotaract Barranquilla Caribe</div>
+        <div class="place-addr">CRA 67 #79-48</div>
+        <div class="meta">📞 Cualquier hora (comunicarse al 302 322 5799)</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Alcaldía de Barranquilla</div>
+        <div class="place-addr">CRA 43 #6-120</div>
+        <div class="meta">🕐 Lunes a domingo · 8:00 am a 4:00 pm</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Clarihairs</div>
+        <div class="place-addr">Carrera 45 #82-195</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Calidex Courier — Ciudad Jardín</div>
+        <div class="place-addr">Calle 79 #42F-93, Local 102, Garden Plaza</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Riohacha</div></div>
+      <div class="place">
+        <div class="place-name">Fundación Chinit</div>
+        <div class="place-addr">Carrera 6 con calle 11-39, Barboza Caro</div>
+        <div class="meta">🕐 Jueves y viernes · 📞 301 526 1912</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Antojitos Repostería</div>
+        <div class="place-addr">Calle 21 #12-45, local 2</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Bogotá</div></div>
+      <div class="place">
+        <div class="place-name">Punto principal</div>
+        <div class="place-addr">Calle 104 #54-31, Barrio Pasadena, Suba</div>
+        <div class="meta">🕐 Desde las 7:00 am</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Calidex Courier</div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Engativá:</strong> Calle 72 #82-60, Local 13 (Piso 1), Centro Empresarial Punto 72</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Cerditos:</strong> Cra 19 #147-30, Local 09, CC La Juguetería</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>San Victorino:</strong> Calle 12B #9-40, CC Neos, Nivel 0, Local 010</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Desiree Helados y Café:</strong> Cra 9 #61-10, Chapinero</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Cali</div></div>
+      <div class="place">
+        <div class="place-name">Comuneros II</div>
+        <div class="place-addr">Carrera 28 B3 #72S-32 (cerca a Troncal Unida)</div>
+      </div>
+      <div class="place">
+        <div class="place-name">Calidex Courier</div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Cali — Norte:</strong> Carrera 1 #61A-30, Local 10, CC Colón Plaza</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Cali — Sur:</strong> Cra 56 #3-32, Local 5, barrio Cuarto de Legua</div>
+        </div>
+      </div>
+      <div class="meta">🕐 8:00 am a 12:00 pm y 5:00 pm a 7:00 pm</div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Bucaramanga</div></div>
+      <div class="place">
+        <div class="place-name">San Francisco</div>
+        <div class="place-addr">Calle 18 #21-52, Bucaramanga, Santander — Diagonal a la Iglesia San Francisco</div>
+        <div class="meta">🕐 7:00 am a 7:00 pm</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Santa Marta</div></div>
+      <div class="place">
+        <div class="place-addr">Parque la Tenería, Carrera 2 con 1D36 — Cerca de Playa Los Cocos</div>
+        <div class="meta">🕐 7:00 am a 6:00 pm</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Montería</div></div>
+      <div class="place">
+        <div class="place-addr">Calle 28A #4W-79, Barrio San Miguel, margen izquierda</div>
+        <div class="meta">🕐 7:00 am a 7:00 pm</div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="city-head"><div class="pin"></div><div class="city-name">Medellín</div></div>
+      <div class="place">
+        <div class="place-name">Calidex Courier</div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Poblado:</strong> Cra 35A #15B-35, Las Palmas, Centro de Negocios Prisma, Oficina 101</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Centro:</strong> Carrera 51 #51-47, Estación Parque Berrío, CC Veracruz, Piso 3, Local 3197</div>
+        </div>
+        <div class="sub-place">
+          <div class="place-addr"><strong>Bello:</strong> Diagonal 55 #37-41, CC Estación Noquia, Local 147</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span class="heart">❤</span>
+    <div class="footer-text">¡TU AYUDA <span class="hl">HACE LA DIFERENCIA</span>!</div>
+    <span class="heart">❤</span>
+  </div>
+
+</div>
+
+</body>
+</html>
